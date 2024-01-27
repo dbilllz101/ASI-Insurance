@@ -58,17 +58,15 @@ pipeline {
             }
         }
 
-        stage('Docker Image Build') {
+        
+         stage('Docker Image Build') {
             steps {
                 script {
-FROM openjdk:11
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-["java","-jar","/app.jar"]
+                    echo 'Creating Docker image'
+                    sh "docker build -t $dockerHubUser/$containerName:$tag --pull --no-cache ."
                 }
             }
         }
-
         stage('Docker Image Scan') {
             steps {
                 script {

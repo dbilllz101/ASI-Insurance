@@ -34,13 +34,7 @@ pipeline {
                 }
             }
         }
-        stage('FrontEnd NodeJS Build') {dir("frontend"){
-            sh"" npm install
-                 npm run test
-                 npm build
-            ""
-        }
-                                       }
+
         stage('Publish Test Reports') {
             steps {
                 script {

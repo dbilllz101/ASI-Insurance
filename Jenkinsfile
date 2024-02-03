@@ -2,6 +2,8 @@ pipeline {
     agent any
     
     environment {
+        mavenHome = tool name: 'maven', type: 'maven'
+        mavenCMD = "${mavenHome}/bin/mvn"
         tag = "3.0"
         dockerHubUser = "anujsharma1990"
         containerName = "insure-me"
@@ -25,6 +27,31 @@ pipeline {
             }
         }
 
+        stage('Maven Build') {
+            steps {
+                script {
+                    sh "${mavenCMD} clean package"
+                }
+            }
+        }
+
+        stage('Publish Test Reports') {
+            steps {
+                script {
+                    publishHTML(
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: 'target/surefire-reports',
+                        reportFiles: 'index.html',
+                        reportName: 'HTML Report',
+                        reportTitles: '',
+                        useWrapperFileDirectly: true
+                    )
+                }
+            }
+        }
+
         stage('Docker Image Build') {
             steps {
                 script {
@@ -33,6 +60,7 @@ pipeline {
                 }
             }
         }
+
         stage('Docker Image Scan') {
             steps {
                 script {

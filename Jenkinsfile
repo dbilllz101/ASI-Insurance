@@ -27,14 +27,6 @@ pipeline {
             }
         }
 
-        stage('Maven Build') {
-            steps {
-                script {
-                    sh "${mavenCMD} clean package"
-                }
-            }
-        }
-
         stage('Publish Test Reports') {
             steps {
                 script {

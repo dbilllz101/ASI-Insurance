@@ -25,25 +25,7 @@ pipeline {
             }
         }
 
-        stage('Publish Test Reports') {
-            steps {
-                script {
-                    publishHTML(
-                        allowMissing: false,
-                        alwaysLinkToLastBuild: false,
-                        keepAll: false,
-                        reportDir: 'target/surefire-reports',
-                        reportFiles: 'index.html',
-                        reportName: 'HTML Report',
-                        reportTitles: '',
-                        useWrapperFileDirectly: true
-                    )
-                }
-            }
-        }
-
-        
-         stage('Docker Image Build') {
+        stage('Docker Image Build') {
             steps {
                 script {
                     echo 'Creating Docker image'

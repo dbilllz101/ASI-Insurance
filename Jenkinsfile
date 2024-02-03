@@ -14,11 +14,7 @@ pipeline {
         stage('Prepare Environment') {
             steps {
                 script {
-                    echo 'Initialize Environment'tag="latest"
-                  withCredentials([UsernamePassword(credentialsId: 'dockerHubAccount', 
-                                                    usernameVariable: 'dbillz101', passwordVariable: 'July24@2020')]){
-                    dockerHubUser"$
-                  dockerUser"}
+                    echo 'Initialize Environment'
                 }
             }
         }
@@ -38,7 +34,15 @@ pipeline {
                 }
             }
         }
-
+        stage('FrontEnd NodeJS Build'){
+dir("frontend"){
+sh """
+npm install
+npm run test
+npm run build
+"""
+}
+}
         stage('Publish Test Reports') {
             steps {
                 script {

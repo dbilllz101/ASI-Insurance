@@ -2,8 +2,6 @@ pipeline {
     agent any
     
     environment {
-        mavenHome = tool name: 'maven', type: 'maven'
-        mavenCMD = "mvn"
         tag = "3.0"
         dockerHubUser = "anujsharma1990"
         containerName = "insure-me"

@@ -45,7 +45,7 @@ pipeline {
             }
          }  
      
-     stage('Publish Test Reports') {
+        stage('Publish Test Reports') {
             steps {
                 script {
                     publishHTML(

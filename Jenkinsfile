@@ -1,6 +1,16 @@
 pipeline {
-def docker, tag, dockerHubUser, backEndContainer, frontendContainerName, backendHttpPort, frontendHttpPort=""
- stages {
+    agent any
+    
+    environment {
+        mavenHome = tool name: 'maven', type: 'maven'
+        mavenCMD = "${mavenHome}/bin/mvn"
+        tag = "3.0"
+        dockerHubUser = "anujsharma1990"
+        containerName = "insure-me"
+        httpPort = "8081"
+    }
+
+    stages {
         stage('Prepare Environment') {
             steps {
                 script {
@@ -17,15 +27,22 @@ def docker, tag, dockerHubUser, backEndContainer, frontendContainerName, backend
             }
         }
 
-        stage('Maven Build') {
+        stage('Backend Maven Build') {
             steps {
                 script {
                     sh "${mavenCMD} clean package"
                 }
             }
         }
-
-        stage('Publish Test Reports') {
+        
+     stage('FrontEnd NodeJS Build')
+     {dir("frontend"){sh""npm install
+                          npm run test
+                          npm run build""
+                     }
+     }  
+     
+     stage('Publish Test Reports') {
             steps {
                 script {
                     publishHTML(

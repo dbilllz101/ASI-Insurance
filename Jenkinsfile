@@ -1,5 +1,5 @@
 pipeline {
-agent any
+def docker, tag, dockerHubUser, backEndContainer, frontendContainerName, backendHttpPort, frontendHttpPort=""
  stages {
         stage('Prepare Environment') {
             steps {

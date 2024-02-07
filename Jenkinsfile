@@ -1,5 +1,5 @@
 pipeline {
-      stages {
+ stages {
         stage('Prepare Environment') {
             steps {
                 script {

@@ -1,16 +1,5 @@
 pipeline {
-    agent any
-    
-    environment {
-        mavenHome = tool name: 'maven', type: 'maven'
-        mavenCMD = "${mavenHome}/bin/mvn"
-        tag = "3.0"
-        dockerHubUser = "anujsharma1990"
-        containerName = "insure-me"
-        httpPort = "8081"
-    }
-
-    stages {
+      stages {
         stage('Prepare Environment') {
             steps {
                 script {

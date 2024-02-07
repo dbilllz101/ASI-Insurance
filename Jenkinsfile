@@ -36,7 +36,7 @@ pipeline {
         }
         
          stage('FrontEnd NodeJS Build')
-            {dir("frontend"){sh""npm install
+            steps  {dir("frontend"){sh""npm install
                           npm run test
                           npm run build
                       ""

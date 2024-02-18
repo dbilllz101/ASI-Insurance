@@ -1,5 +1,7 @@
 FROM adoptopenjdk11 : latest
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app.jar"]
+WORKDIR /app
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnv dependency:resolve
+COPY src ./src
+CMD ["./mvnw", "spring-boot:run"]

@@ -5,7 +5,7 @@ pipeline {
         mavenHome = tool name: 'maven', type: 'maven'
         mavenCMD = "${mavenHome}/bin/mvn"
         tag = "3.0"
-        dockerHubUser = "dbillz101"
+        dockerHubUser = "anujsharma1990"
         containerName = "insure-me"
         httpPort = "8081"
     }
@@ -27,24 +27,14 @@ pipeline {
             }
         }
 
-        stage('Backend Maven Build') {
+        stage('Maven Build') {
             steps {
                 script {
                     sh "${mavenCMD} clean package"
                 }
             }
         }
-        
-        stage("FrontEnd NodeJS Build")
-            {dir("frontend"){
-                    sh""
-                          npm install
-                          npm run test
-                          npm run build
-                      ""
-            }
-         }  
-     
+
         stage('Publish Test Reports') {
             steps {
                 script {

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce Landing Page</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Replace with fonts from your Figma design -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="header__logo">BrandName</div>
+      <nav class="header__nav">
+        <a href="#features" class="header__link">Features</a>
+        <a href="#products" class="header__link">Products</a>
+        <a href="#testimonials" class="header__link">Reviews</a>
+        <a href="#faq" class="header__link">FAQ</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn btn--ghost">Sign in</button>
+        <button class="btn btn--primary">Sign up</button>
+      </div>
+      <button class="header__menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow">New collection</p>
+        <h1 class="hero__title">
+          Shop the latest trends in one seamless experience.
+        </h1>
+        <p class="hero__subtitle">
+          Discover curated products from top brands with fast delivery and secure checkout.
+        </p>
+        <div class="hero__actions">
+          <button class="btn btn--primary">Shop now</button>
+          <button class="btn btn--ghost">Browse categories</button>
+        </div>
+        <div class="hero__meta">
+          <div class="hero__stat">
+            <span class="hero__stat-number">10k+</span>
+            <span class="hero__stat-label">Happy customers</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">2k+</span>
+            <span class="hero__stat-label">Products</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">4.9</span>
+            <span class="hero__stat-label">Average rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__image-wrapper">
+        <!-- Replace with your hero image from Figma -->
+        <img src="assets/images/hero-placeholder.jpg" alt="Featured products" class="hero__image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Features / Value props -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-heading">
+        <h2 class="section-heading__title">Why shop with us</h2>
+        <p class="section-heading__subtitle">
+          A modern shopping experience designed for speed, trust, and delight.
+        </p>
+      </div>
+      <div class="features__grid">
+        <article class="feature-card">
+          <div class="feature-card__icon">🚚</div>
+          <h3 class="feature-card__title">Fast delivery</h3>
+          <p class="feature-card__text">
+            Get your orders delivered in as little as 24 hours with real-time tracking.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon">🔒</div>
+          <h3 class="feature-card__title">Secure checkout</h3>
+          <p class="feature-card__text">
+            Encrypted payments and trusted gateways keep your data safe.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-card__icon">⭐</div>
+          <h3 class="feature-card__title">Top-rated products</h3>
+          <p class="feature-card__text">
+            Curated catalog with verified reviews and quality assurance.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-heading section-heading--row">
+        <div>
+          <h2 class="section-heading__title">Featured products</h2>
+          <p class="section-heading__subtitle">
+            Handpicked items from our latest collection.
+          </p>
+        </div>
+        <button class="btn btn--ghost">View all</button>
+      </div>
+      <div class="products__grid">
+        <!-- Product card 1 -->
+        <article class="product-card">
+          <div class="product-card__image-wrapper">
+            <img src="assets/images/product-1.jpg" alt="Product 1" class="product-card__image" />
+            <span class="product-card__badge">New</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Minimalist Sneakers</h3>
+            <p class="product-card__category">Footwear</p>
+            <div class="product-card__meta">
+              <span class="product-card__price">$89.00</span>
+              <span class="product-card__rating">4.8 ★</span>
+            </div>
+            <button class="btn btn--secondary product-card__btn">Add to cart</button>
+          </div>
+        </article>
+
+        <!-- Duplicate and adjust for more products -->
+        <article class="product-card">
+          <div class="product-card__image-wrapper">
+            <img src="assets/images/product-2.jpg" alt="Product 2" class="product-card__image" />
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Classic Hoodie</h3>
+            <p class="product-card__category">Apparel</p>
+            <div class="product-card__meta">
+              <span class="product-card__price">$59.00</span>
+              <span class="product-card__rating">4.7 ★</span>
+            </div>
+            <button class="btn btn--secondary product-card__btn">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__image-wrapper">
+            <img src="assets/images/product-3.jpg" alt="Product 3" class="product-card__image" />
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Leather Backpack</h3>
+            <p class="product-card__category">Accessories</p>
+            <div class="product-card__meta">
+              <span class="product-card__price">$129.00</span>
+              <span class="product-card__rating">4.9 ★</span>
+            </div>
+            <button class="btn btn--secondary product-card__btn">Add to cart</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-heading">
+        <h2 class="section-heading__title">What our customers say</h2>
+        <p class="section-heading__subtitle">
+          Real stories from people who love shopping with us.
+        </p>
+      </div>
+      <div class="testimonials__grid">
+        <article class="testimonial-card">
+          <p class="testimonial-card__text">
+            “The experience was seamless from browsing to checkout. Delivery was faster than expected!”
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">A</div>
+            <div>
+              <p class="testimonial-card__name">Alex Johnson</p>
+              <p class="testimonial-card__role">Verified buyer</p>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <p class="testimonial-card__text">
+            “Great quality products and excellent customer support. I’ll definitely be back.”
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">M</div>
+            <div>
+              <p class="testimonial-card__name">Maria Lopez</p>
+              <p class="testimonial-card__role">Verified buyer</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / CTA -->
+  <section class="cta" id="faq">
+    <div class="container cta__inner">
+      <div class="cta__content">
+        <h2 class="cta__title">Ready to upgrade your shopping experience?</h2>
+        <p class="cta__subtitle">
+          Join thousands of customers who trust us for their everyday essentials and statement pieces.
+        </p>
+      </div>
+      <div class="cta__actions">
+        <button class="btn btn--primary">Get started</button>
+        <button class="btn btn--ghost">Learn more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">BrandName</div>
+        <p class="footer__text">
+          Your go-to destination for curated, high-quality products.
+        </p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__column">
+          <h4 class="footer__heading">Shop</h4>
+          <a href="#" class="footer__link">New arrivals</a>
+          <a href="#" class="footer__link">Best sellers</a>
+          <a href="#" class="footer__link">Gift cards</a>
+        </div>
+        <div class="footer__column">
+          <h4 class="footer__heading">Support</h4>
+          <a href="#" class="footer__link">Help center</a>
+          <a href="#" class="footer__link">Shipping</a>
+          <a href="#" class="footer__link">Returns</a>
+        </div>
+        <div class="footer__column">
+          <h4 class="footer__heading">Company</h4>
+          <a href="#" class="footer__link">About</a>
+          <a href="#" class="footer__link">Careers</a>
+          <a href="#" class="footer__link">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="footer__copyright">
+          © <span id="year"></span> BrandName. All rights reserved.
+        </p>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
